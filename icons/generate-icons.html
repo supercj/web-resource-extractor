@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head><title>Generate Icons</title></head>
+<body>
+<canvas id="canvas" width="128" height="128"></canvas>
+<script>
+// 用浏览器打开此页面，右键 canvas 保存为 icon16/icon48/icon128.png
+const canvas = document.getElementById('canvas');
+const ctx = canvas.getContext('2d');
+
+// 背景
+const gradient = ctx.createLinearGradient(0, 0, 128, 128);
+gradient.addColorStop(0, '#4f6ef7');
+gradient.addColorStop(1, '#6c8cff');
+ctx.fillStyle = gradient;
+ctx.beginPath();
+ctx.roundRect(0, 0, 128, 128, 16);
+ctx.fill();
+
+// 搜索图标
+ctx.strokeStyle = '#ffffff';
+ctx.lineWidth = 6;
+ctx.lineCap = 'round';
+
+// 放大镜圆
+ctx.beginPath();
+ctx.arc(50, 50, 25, 0, Math.PI * 2);
+ctx.stroke();
+
+// 放大镜手柄
+ctx.beginPath();
+ctx.moveTo(68, 68);
+ctx.lineTo(90, 90);
+ctx.stroke();
+
+// 资源小点
+ctx.fillStyle = 'rgba(255,255,255,0.6)';
+const dots = [[30,80],[50,85],[70,78],[90,82],[40,95],[60,100],[80,93]];
+dots.forEach(([x,y]) => {
+  ctx.beginPath();
+  ctx.arc(x, y, 4, 0, Math.PI * 2);
+  ctx.fill();
+});
+
+console.log('右键 canvas → 另存为图片，分别保存为 16x16, 48x48, 128x128');
+</script>
+</body>
+</html>

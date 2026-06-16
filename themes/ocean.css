@@ -1,0 +1,55 @@
+/* ── 海洋蓝主题 ──────────────────────────────────── */
+[data-theme="ocean"] {
+  --bg-primary: #e8f4f8;
+  --bg-secondary: #d1ecf4;
+  --bg-tertiary: #b8e2ee;
+  --bg-hover: #a0d8e8;
+  --bg-active: #88cedf;
+  --bg-card: #eef8fb;
+
+  --text-primary: #0c3547;
+  --text-secondary: #1a5f7a;
+  --text-tertiary: #4a8fa5;
+  --text-inverse: #ffffff;
+
+  --accent: #0891b2;
+  --accent-hover: #0e7490;
+  --accent-light: #d0f0f9;
+  --accent-text: #ffffff;
+
+  --success: #059669;
+  --success-light: #d1fae5;
+  --warning: #d97706;
+  --warning-light: #fef3c7;
+  --danger: #dc2626;
+  --danger-light: #fee2e2;
+  --info: #0284c7;
+  --info-light: #e0f2fe;
+
+  --border: #99d5e5;
+  --border-light: #b8e2ee;
+  --border-active: #0891b2;
+
+  --shadow-sm: 0 1px 2px rgba(8, 145, 178, 0.1);
+  --shadow-md: 0 4px 12px rgba(8, 145, 178, 0.15);
+  --shadow-lg: 0 8px 24px rgba(8, 145, 178, 0.2);
+
+  --scrollbar-track: #d1ecf4;
+  --scrollbar-thumb: #7ecce0;
+  --scrollbar-thumb-hover: #0891b2;
+
+  --tag-image: #7c3aed;
+  --tag-script: #d97706;
+  --tag-style: #0891b2;
+  --tag-video: #dc2626;
+  --tag-audio: #db2777;
+  --tag-font: #059669;
+  --tag-link: #0284c7;
+  --tag-third-party: #4f46e5;
+
+  --waterfall-bg: #d1ecf4;
+  --waterfall-bar: #0891b2;
+  --waterfall-bar-slow: #dc2626;
+  --waterfall-grid: #99d5e5;
+  --waterfall-text: #1a5f7a;
+}

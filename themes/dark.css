@@ -1,0 +1,55 @@
+/* ── 暗黑主题 ────────────────────────────────────── */
+[data-theme="dark"] {
+  --bg-primary: #0f1117;
+  --bg-secondary: #1a1d27;
+  --bg-tertiary: #252836;
+  --bg-hover: #2d3143;
+  --bg-active: #363a4e;
+  --bg-card: #1a1d27;
+
+  --text-primary: #e4e7f1;
+  --text-secondary: #9ba1b8;
+  --text-tertiary: #6b7194;
+  --text-inverse: #0f1117;
+
+  --accent: #6c8cff;
+  --accent-hover: #8aa4ff;
+  --accent-light: #1e2440;
+  --accent-text: #0f1117;
+
+  --success: #34d399;
+  --success-light: #0d2f23;
+  --warning: #fbbf24;
+  --warning-light: #2d2510;
+  --danger: #f87171;
+  --danger-light: #2d1215;
+  --info: #60a5fa;
+  --info-light: #0f1d35;
+
+  --border: #2d3143;
+  --border-light: #252836;
+  --border-active: #6c8cff;
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.5);
+
+  --scrollbar-track: #1a1d27;
+  --scrollbar-thumb: #363a4e;
+  --scrollbar-thumb-hover: #4a4f66;
+
+  --tag-image: #a78bfa;
+  --tag-script: #fbbf24;
+  --tag-style: #22d3ee;
+  --tag-video: #f87171;
+  --tag-audio: #f472b6;
+  --tag-font: #34d399;
+  --tag-link: #60a5fa;
+  --tag-third-party: #818cf8;
+
+  --waterfall-bg: #1a1d27;
+  --waterfall-bar: #6c8cff;
+  --waterfall-bar-slow: #f87171;
+  --waterfall-grid: #2d3143;
+  --waterfall-text: #9ba1b8;
+}

@@ -1,0 +1,54 @@
+# 操作系统
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+
+# 编辑器
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.settings/
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+yarn.lock
+
+# 构建产物
+dist/
+build/
+*.crx
+*.pem
+*.zip
+
+# 临时文件
+*.tmp
+*.log
+.cache/
+
+# 测试
+coverage/
+.nyc_output/
+
+# 开发文档（保留重要文档）
+TEST.md
+IMPLEMENTATION.md
+FIX.md
+CHANGELOG.md
+STORE_CHECKLIST.md
+
+# 环境变量
+.env
+.env.local
+.env.*.local

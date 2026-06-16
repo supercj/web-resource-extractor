@@ -1,0 +1,55 @@
+/* ── 樱花粉主题 ──────────────────────────────────── */
+[data-theme="sakura"] {
+  --bg-primary: #fff5f7;
+  --bg-secondary: #ffe8ee;
+  --bg-tertiary: #fdd8e2;
+  --bg-hover: #fcc5d4;
+  --bg-active: #fbb0c3;
+  --bg-card: #fff8fa;
+
+  --text-primary: #4a1028;
+  --text-secondary: #7d2f50;
+  --text-tertiary: #a8607e;
+  --text-inverse: #ffffff;
+
+  --accent: #e11d6f;
+  --accent-hover: #c4175f;
+  --accent-light: #fde8f0;
+  --accent-text: #ffffff;
+
+  --success: #16a34a;
+  --success-light: #dcfce7;
+  --warning: #ca8a04;
+  --warning-light: #fefce8;
+  --danger: #dc2626;
+  --danger-light: #fee2e2;
+  --info: #2563eb;
+  --info-light: #dbeafe;
+
+  --border: #f5c2cf;
+  --border-light: #fdd8e2;
+  --border-active: #e11d6f;
+
+  --shadow-sm: 0 1px 2px rgba(225, 29, 111, 0.08);
+  --shadow-md: 0 4px 12px rgba(225, 29, 111, 0.12);
+  --shadow-lg: 0 8px 24px rgba(225, 29, 111, 0.18);
+
+  --scrollbar-track: #ffe8ee;
+  --scrollbar-thumb: #f5a3bc;
+  --scrollbar-thumb-hover: #e11d6f;
+
+  --tag-image: #9333ea;
+  --tag-script: #ca8a04;
+  --tag-style: #0891b2;
+  --tag-video: #dc2626;
+  --tag-audio: #e11d6f;
+  --tag-font: #16a34a;
+  --tag-link: #2563eb;
+  --tag-third-party: #7c3aed;
+
+  --waterfall-bg: #ffe8ee;
+  --waterfall-bar: #e11d6f;
+  --waterfall-bar-slow: #dc2626;
+  --waterfall-grid: #f5c2cf;
+  --waterfall-text: #7d2f50;
+}

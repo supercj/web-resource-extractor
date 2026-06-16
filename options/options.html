@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="default">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web Resource Extractor - 设置</title>
+  <link rel="stylesheet" href="../themes/default.css">
+  <link rel="stylesheet" href="../themes/dark.css">
+  <link rel="stylesheet" href="../themes/ocean.css">
+  <link rel="stylesheet" href="../themes/sakura.css">
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <div class="options-container">
+    <header class="options-header">
+      <h1>⚙️ Web Resource Extractor 设置</h1>
+      <p class="subtitle">自定义插件外观和行为</p>
+    </header>
+
+    <!-- 主题选择 -->
+    <section class="options-section">
+      <h2>🎨 皮肤主题</h2>
+      <p class="section-desc">选择你喜欢的主题风格</p>
+      <div class="theme-grid" id="theme-grid">
+        <div class="theme-card" data-theme="default">
+          <div class="theme-preview-box default-theme">
+            <div class="preview-header"></div>
+            <div class="preview-body">
+              <div class="preview-item"></div>
+              <div class="preview-item"></div>
+              <div class="preview-item"></div>
+            </div>
+          </div>
+          <div class="theme-card-label">☀️ 默认</div>
+          <span class="theme-check" style="display:none;">✓</span>
+        </div>
+        <div class="theme-card" data-theme="dark">
+          <div class="theme-preview-box dark-theme">
+            <div class="preview-header"></div>
+            <div class="preview-body">
+              <div class="preview-item"></div>
+              <div class="preview-item"></div>
+              <div class="preview-item"></div>
+            </div>
+          </div>
+          <div class="theme-card-label">🌙 暗黑</div>
+          <span class="theme-check" style="display:none;">✓</span>
+        </div>
+        <div class="theme-card" data-theme="ocean">
+          <div class="theme-preview-box ocean-theme">
+            <div class="preview-header"></div>
+            <div class="preview-body">
+              <div class="preview-item"></div>
+              <div class="preview-item"></div>
+              <div class="preview-item"></div>
+            </div>
+          </div>
+          <div class="theme-card-label">🌊 海洋</div>
+          <span class="theme-check" style="display:none;">✓</span>
+        </div>
+        <div class="theme-card" data-theme="sakura">
+          <div class="theme-preview-box sakura-theme">
+            <div class="preview-header"></div>
+            <div class="preview-body">
+              <div class="preview-item"></div>
+              <div class="preview-item"></div>
+              <div class="preview-item"></div>
+            </div>
+          </div>
+          <div class="theme-card-label">🌸 樱花</div>
+          <span class="theme-check" style="display:none;">✓</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 行为设置 -->
+    <section class="options-section">
+      <h2>⚙️ 行为设置</h2>
+      <div class="setting-group">
+        <div class="setting-item">
+          <label for="slow-threshold">慢加载阈值 (ms)</label>
+          <input type="number" id="slow-threshold" min="100" max="10000" step="100" value="1000">
+          <span class="setting-hint">超过此时间的资源将被标记为「慢加载」</span>
+        </div>
+        <div class="setting-item">
+          <label for="default-tab">默认分类 Tab</label>
+          <select id="default-tab">
+            <option value="images">🖼️ 图片</option>
+            <option value="scripts">📜 脚本</option>
+            <option value="styles">🎨 样式</option>
+            <option value="fonts">🔤 字体</option>
+            <option value="videos">🎬 视频</option>
+            <option value="audios">🔊 音频</option>
+            <option value="links">🔗 链接</option>
+            <option value="third-party">📦 第三方</option>
+          </select>
+        </div>
+        <div class="setting-item">
+          <label for="export-format">默认导出格式</label>
+          <select id="export-format">
+            <option value="zip">📦 ZIP 压缩包</option>
+            <option value="urls">📝 URL 列表 (.txt)</option>
+          </select>
+        </div>
+        <div class="setting-item checkbox-item">
+          <label>
+            <input type="checkbox" id="show-size" checked>
+            显示资源大小
+          </label>
+        </div>
+        <div class="setting-item checkbox-item">
+          <label>
+            <input type="checkbox" id="show-duration" checked>
+            显示加载耗时
+          </label>
+        </div>
+      </div>
+    </section>
+
+    <!-- 保存按钮 -->
+    <div class="options-footer">
+      <button id="btn-save" class="btn-save">💾 保存设置</button>
+      <button id="btn-reset" class="btn-reset">🔄 恢复默认</button>
+      <span class="save-status" id="save-status"></span>
+    </div>
+  </div>
+
+  <script src="options.js"></script>
+</body>
+</html>
