@@ -184,7 +184,7 @@ git push origin feature/your-feature
 
 遇到问题？请通过以下方式反馈：
 
-- **GitHub Issues**：https://github.com/your-username/prism/issues
+- **GitHub Issues**：https://github.com/supercj/web-resource-extractor/issues
 - **功能建议**：欢迎在 Issues 中提出新功能建议
 
 ---

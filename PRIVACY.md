@@ -81,4 +81,4 @@ Content Script 仅读取当前页面的 DOM 结构和 Performance API 数据，*
 
 如对本隐私说明有任何疑问，请通过以下方式联系我们：
 
-- GitHub Issues：https://github.com/your-username/prism/issues
+- GitHub Issues：https://github.com/supercj/web-resource-extractor/issues
