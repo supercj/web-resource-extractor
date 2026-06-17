@@ -433,13 +433,13 @@
     "message": "语言已切换",
     "description": "语言已切换"
   },
-  "aboutDeveloper": {
-    "message": "关于开发者",
-    "description": "关于开发者"
+  "aboutProject": {
+    "message": "关于项目",
+    "description": "关于项目"
   },
-  "developerIntro": {
-    "message": "全栈开发者，专注于浏览器扩展和 Web 工具开发",
-    "description": "开发者介绍"
+  "projectDescription": {
+    "message": "强大的网页资源提取工具，支持一键提取、分类展示、性能分析和批量导出",
+    "description": "项目描述"
   },
   "projectRepo": {
     "message": "项目仓库",
@@ -448,5 +448,9 @@
   "reportIssue": {
     "message": "反馈问题",
     "description": "反馈问题"
+  },
+  "documentation": {
+    "message": "使用文档",
+    "description": "使用文档"
   }
 }

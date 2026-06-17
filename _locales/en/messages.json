@@ -433,13 +433,13 @@
     "message": "Language changed",
     "description": "Language changed"
   },
-  "aboutDeveloper": {
-    "message": "About Developer",
-    "description": "About developer"
+  "aboutProject": {
+    "message": "About Project",
+    "description": "About project"
   },
-  "developerIntro": {
-    "message": "Full-stack developer, focused on browser extensions and web tools",
-    "description": "Developer intro"
+  "projectDescription": {
+    "message": "Powerful web resource extraction tool with one-click extraction, classification, performance analysis and batch export",
+    "description": "Project description"
   },
   "projectRepo": {
     "message": "Project Repo",
@@ -448,5 +448,9 @@
   "reportIssue": {
     "message": "Report Issue",
     "description": "Report issue"
+  },
+  "documentation": {
+    "message": "Documentation",
+    "description": "Documentation"
   }
 }
