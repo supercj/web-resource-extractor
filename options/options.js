@@ -7,7 +7,9 @@
   'use strict';
 
   // ── i18n 辅助函数 ──────────────────────────────────────
-  const i18n = (key, substitutions) => chrome.i18n.getMessage(key, substitutions);
+  const i18n = (key, substitutions) => {
+    return window.i18n ? window.i18n(key, substitutions) : key;
+  };
 
   const defaultSettings = {
     slowThreshold: 1000,

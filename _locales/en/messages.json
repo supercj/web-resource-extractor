@@ -432,9 +432,5 @@
   "languageChanged": {
     "message": "Language changed",
     "description": "Language changed"
-  },
-  "reloadExtension": {
-    "message": "Please reopen the popup to see the changes",
-    "description": "Reload prompt"
   }
 }

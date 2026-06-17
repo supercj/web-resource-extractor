@@ -930,12 +930,14 @@
   }
 
   async function switchLanguage(language) {
-    await chrome.storage.sync.set({ language });
+    await window.switchLanguage(language);
     showToast(i18n('languageChanged'), 'success');
-    // 提示用户需要重新加载扩展
-    setTimeout(() => {
-      showToast(i18n('reloadExtension'), 'info');
-    }, 1500);
+
+    // 触发界面刷新 - 重新渲染当前数据
+    if (currentData) {
+      renderList();
+      updateStats();
+    }
   }
 
   // ── 工具函数 ──────────────────────────────────────

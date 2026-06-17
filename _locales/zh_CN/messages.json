@@ -432,9 +432,5 @@
   "languageChanged": {
     "message": "语言已切换",
     "description": "语言已切换"
-  },
-  "reloadExtension": {
-    "message": "请重新打开弹窗查看效果",
-    "description": "重新加载提示"
   }
 }
