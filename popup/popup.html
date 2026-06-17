@@ -3,34 +3,35 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PRISM 棱镜</title>
+  <title>PRISM</title>
   <link rel="stylesheet" href="../themes/default.css">
   <link rel="stylesheet" href="../themes/dark.css">
   <link rel="stylesheet" href="../themes/ocean.css">
   <link rel="stylesheet" href="../themes/sakura.css">
   <link rel="stylesheet" href="popup.css">
+  <script src="../lib/i18n.js"></script>
 </head>
 <body>
   <!-- 顶部栏 -->
   <header class="header">
     <div class="header-left">
       <span class="logo">🔷</span>
-      <h1 class="title">PRISM 棱镜</h1>
+      <h1 class="title" data-i18n="extensionName">PRISM 棱镜</h1>
     </div>
     <div class="header-right">
-      <button id="btn-refresh" class="icon-btn" title="刷新资源">
+      <button id="btn-refresh" class="icon-btn" data-i18n-title="refresh" title="刷新资源">
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
           <path d="M13.65 2.35A7.96 7.96 0 008 0C3.58 0 .01 3.58.01 8S3.58 16 8 16c3.73 0 6.84-2.55 7.73-6h-2.08A5.99 5.99 0 018 14 6 6 0 012 8a6 6 0 016-6c1.66 0 3.14.69 4.22 1.78L9 7h7V0l-2.35 2.35z" fill="currentColor"/>
         </svg>
       </button>
-      <button id="btn-stats" class="icon-btn" title="统计面板">
+      <button id="btn-stats" class="icon-btn" data-i18n-title="btnStatistics" title="统计面板">
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
           <rect x="1" y="9" width="3" height="6" rx="0.5" fill="currentColor"/>
           <rect x="6" y="5" width="3" height="10" rx="0.5" fill="currentColor"/>
           <rect x="11" y="1" width="3" height="14" rx="0.5" fill="currentColor"/>
         </svg>
       </button>
-      <button id="btn-waterfall" class="icon-btn" title="瀑布图">
+      <button id="btn-waterfall" class="icon-btn" data-i18n-title="btnWaterfall" title="瀑布图">
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
           <rect x="0" y="1" width="10" height="2" rx="0.5" fill="currentColor"/>
           <rect x="2" y="5" width="12" height="2" rx="0.5" fill="currentColor"/>
@@ -38,16 +39,20 @@
           <rect x="4" y="13" width="11" height="2" rx="0.5" fill="currentColor"/>
         </svg>
       </button>
-      <button id="btn-theme" class="icon-btn" title="切换主题">
+      <button id="btn-theme" class="icon-btn" data-i18n-title="theme" title="切换主题">
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
           <circle cx="8" cy="8" r="4" fill="currentColor"/>
           <path d="M8 0v2M8 14v2M0 8h2M14 8h2M2.34 2.34l1.42 1.42M12.24 12.24l1.42 1.42M2.34 13.66l1.42-1.42M12.24 3.76l1.42-1.42" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
         </svg>
       </button>
-      <a id="btn-options" class="icon-btn" href="#" title="设置">
+      <button id="btn-language" class="icon-btn" data-i18n-title="language" title="语言">
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-          <path d="M8 5.5a2.5 2.5 0 100 5 2.5 2.5 0 000-5zM6.5 8a1.5 1.5 0 113 0 1.5 1.5 0 01-3 0z" fill="currentColor"/>
-          <path fill-rule="evenodd" d="M8 1a.5.5 0 01.5.5v.517a4.978 4.978 0 011.334.562l.365-.365a.5.5 0 11.707.707l-.365.365A4.978 4.978 0 0111.203 4.5h.517a.5.5 0 010 1h-.517a4.978 4.978 0 01-.562 1.334l.365.365a.5.5 0 11-.707.707l-.365-.365A4.978 4.978 0 019.5 8.203v.517a.5.5 0 01-1 0v-.517a4.978 4.978 0 01-1.334-.562l-.365.365a.5.5 0 11-.707-.707l.365-.365A4.978 4.978 0 015.797 6.5H5.28a.5.5 0 010-1h.517a4.978 4.978 0 01.562-1.334l-.365-.365a.5.5 0 11.707-.707l.365.365A4.978 4.978 0 017.5 2.017V1.5A.5.5 0 018 1z" fill="currentColor"/>
+          <path d="M8 0C3.6 0 0 3.6 0 8s3.6 8 8 8 8-3.6 8-8-3.6-8-8-8zm5.2 4.7h-2.9c-.2-1-.5-1.9-.9-2.7 1.7.6 3 1.9 3.8 3.4zM8 1.5c.6.8 1 1.8 1.3 2.9H6.7c.3-1.1.7-2.1 1.3-2.9zM1.8 9.5c-.1-.5-.2-1-.2-1.5s.1-1 .2-1.5h3.4c-.1.5-.1 1-.1 1.5s0 1 .1 1.5H1.8zm.7 1.5h2.9c.2 1 .5 1.9.9 2.7-1.7-.7-3.1-2-3.8-3.5zm2.9-6H2.5c.7-1.5 2.1-2.7 3.8-3.4-.4.8-.7 1.7-.9 2.7zM8 14.5c-.6-.8-1-1.8-1.3-2.9h2.6c-.3 1.1-.7 2.1-1.3 2.9zm1.5-4.5H6.5c-.1-.5-.1-1-.1-1.5s0-1 .1-1.5h3c.1.5.1 1 .1 1.5s0 1-.1 1.5zm.1 3.2c.4-.8.7-1.7.9-2.7h2.9c-.7 1.6-2.1 2.9-3.8 3.5zM10.7 9.5c.1-.5.1-1 .1-1.5s0-1-.1-1.5h3.4c.1.5.2 1 .2 1.5s-.1 1-.2 1.5h-3.4z" fill="currentColor"/>
+        </svg>
+      </button>
+      <a id="btn-options" class="icon-btn" href="#" data-i18n-title="settings" title="设置">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M10.75 2.5a.75.75 0 00-1.5 0v.568a6.5 6.5 0 00-1.774.773l-.402-.402a.75.75 0 00-1.06 1.06l.402.402A6.5 6.5 0 005.643 6.75H5.075a.75.75 0 000 1.5h.568a6.5 6.5 0 00.773 1.774l-.402.402a.75.75 0 001.06 1.06l.402-.402a6.5 6.5 0 001.774.773v.568a.75.75 0 001.5 0v-.568a6.5 6.5 0 001.774-.773l.402.402a.75.75 0 001.06-1.06l-.402-.402a6.5 6.5 0 00.773-1.774h.568a.75.75 0 000-1.5h-.568a6.5 6.5 0 00-.773-1.774l.402-.402a.75.75 0 00-1.06-1.06l-.402.402a6.5 6.5 0 00-1.774-.773V2.5zM10 13a3 3 0 100-6 3 3 0 000 6z" fill="currentColor"/>
         </svg>
       </a>
     </div>
@@ -55,34 +60,34 @@
 
   <!-- 页面信息 -->
   <div class="page-info" id="page-info">
-    <span class="page-url" id="page-url" title="">加载中...</span>
+    <span class="page-url" id="page-url" title="" data-i18n="loading">加载中...</span>
   </div>
 
   <!-- 搜索栏 -->
   <div class="search-bar">
-    <input type="text" id="search-input" class="search-input" placeholder="搜索资源 URL、域名...">
+    <input type="text" id="search-input" class="search-input" data-i18n-placeholder="searchPlaceholder" placeholder="搜索资源 URL、域名...">
     <div class="search-filters">
       <label class="filter-chip">
         <input type="checkbox" id="filter-external" checked>
-        <span>外部资源</span>
+        <span data-i18n="filterExternal">外部资源</span>
       </label>
       <label class="filter-chip">
         <input type="checkbox" id="filter-large">
-        <span>大文件 (>100KB)</span>
+        <span data-i18n="filterLarge">大文件 (>100KB)</span>
       </label>
       <label class="filter-chip">
         <input type="checkbox" id="filter-slow">
-        <span>慢加载 (>1s)</span>
+        <span data-i18n="filterSlow">慢加载</span>
       </label>
       <div class="ext-filter-wrapper">
         <button id="btn-ext-filter" class="filter-chip ext-filter-btn">
-          <span>📁 后缀筛选</span>
+          <span id="ext-filter-label">📁 <span data-i18n="extensionFilter">后缀筛选</span></span>
           <span class="ext-filter-arrow">▾</span>
         </button>
         <div id="ext-dropdown" class="ext-dropdown" style="display:none;">
           <div class="ext-dropdown-header">
-            <button id="ext-select-all" class="ext-action">全选</button>
-            <button id="ext-deselect-all" class="ext-action">清空</button>
+            <button id="ext-select-all" class="ext-action" data-i18n="selectAll">全选</button>
+            <button id="ext-deselect-all" class="ext-action" data-i18n="deselectAll">清空</button>
           </div>
           <div id="ext-list" class="ext-list"></div>
         </div>
@@ -93,41 +98,41 @@
   <!-- 分类 Tab -->
   <div class="tabs" id="tabs">
     <button class="tab active" data-tab="images">
-      🖼️ 图片 <span class="tab-count" id="count-images">0</span>
+      🖼️ <span data-i18n="tabImages">图片</span> <span class="tab-count" id="count-images">0</span>
     </button>
     <button class="tab" data-tab="scripts">
-      📜 脚本 <span class="tab-count" id="count-scripts">0</span>
+      📜 <span data-i18n="tabScripts">脚本</span> <span class="tab-count" id="count-scripts">0</span>
     </button>
     <button class="tab" data-tab="styles">
-      🎨 样式 <span class="tab-count" id="count-styles">0</span>
+      🎨 <span data-i18n="tabStyles">样式</span> <span class="tab-count" id="count-styles">0</span>
     </button>
     <button class="tab" data-tab="fonts">
-      🔤 字体 <span class="tab-count" id="count-fonts">0</span>
+      🔤 <span data-i18n="tabFonts">字体</span> <span class="tab-count" id="count-fonts">0</span>
     </button>
     <button class="tab" data-tab="videos">
-      🎬 视频 <span class="tab-count" id="count-videos">0</span>
+      🎬 <span data-i18n="tabVideos">视频</span> <span class="tab-count" id="count-videos">0</span>
     </button>
     <button class="tab" data-tab="audios">
-      🔊 音频 <span class="tab-count" id="count-audios">0</span>
+      🔊 <span data-i18n="tabAudios">音频</span> <span class="tab-count" id="count-audios">0</span>
     </button>
     <button class="tab" data-tab="links">
-      🔗 链接 <span class="tab-count" id="count-links">0</span>
+      🔗 <span data-i18n="tabLinks">链接</span> <span class="tab-count" id="count-links">0</span>
     </button>
     <button class="tab" data-tab="third-party">
-      📦 第三方 <span class="tab-count" id="count-third-party">0</span>
+      📦 <span data-i18n="tabThirdParty">第三方</span> <span class="tab-count" id="count-third-party">0</span>
     </button>
   </div>
 
   <!-- 批量操作栏 -->
   <div class="batch-bar" id="batch-bar" style="display:none;">
     <span class="batch-info">
-      已选 <strong id="selected-count">0</strong> 项
+      <span data-i18n="selectedCount">已选</span> <strong id="selected-count">0</strong> <span data-i18n="items">项</span>
     </span>
     <div class="batch-actions">
-      <button id="btn-select-all" class="btn-sm">全选</button>
-      <button id="btn-deselect-all" class="btn-sm">取消</button>
-      <button id="btn-download-selected" class="btn-sm btn-primary">📥 下载选中</button>
-      <button id="btn-export-zip" class="btn-sm btn-accent">📦 导出 ZIP</button>
+      <button id="btn-select-all" class="btn-sm" data-i18n="btnSelectAll">全选</button>
+      <button id="btn-deselect-all" class="btn-sm" data-i18n="btnDeselectAll">取消</button>
+      <button id="btn-download-selected" class="btn-sm btn-primary">📥 <span data-i18n="btnDownloadSelected">下载选中</span></button>
+      <button id="btn-export-zip" class="btn-sm btn-accent">📦 <span data-i18n="btnExportZip">导出 ZIP</span></button>
     </div>
   </div>
 
@@ -135,11 +140,11 @@
   <div class="resource-list" id="resource-list">
     <div class="loading" id="loading">
       <div class="spinner"></div>
-      <span>正在提取资源...</span>
+      <span data-i18n="extracting">正在提取资源...</span>
     </div>
     <div class="empty-state" id="empty-state" style="display:none;">
       <span class="empty-icon">📭</span>
-      <span>未找到相关资源</span>
+      <span data-i18n="emptyStateTitle">未找到相关资源</span>
     </div>
     <div class="list-content" id="list-content"></div>
   </div>
@@ -148,7 +153,7 @@
   <div class="overlay" id="stats-overlay" style="display:none;">
     <div class="panel stats-panel">
       <div class="panel-header">
-        <h2>📊 资源统计</h2>
+        <h2>📊 <span data-i18n="statsTitle">资源统计</span></h2>
         <button class="panel-close" data-close="stats-overlay">&times;</button>
       </div>
       <div class="panel-body" id="stats-body"></div>
@@ -159,7 +164,7 @@
   <div class="overlay" id="waterfall-overlay" style="display:none;">
     <div class="panel waterfall-panel">
       <div class="panel-header">
-        <h2>📈 加载瀑布图</h2>
+        <h2>📈 <span data-i18n="waterfallTitle">加载瀑布图</span></h2>
         <button class="panel-close" data-close="waterfall-overlay">&times;</button>
       </div>
       <div class="panel-body waterfall-body" id="waterfall-body"></div>
@@ -170,19 +175,29 @@
   <div class="theme-dropdown" id="theme-dropdown" style="display:none;">
     <div class="theme-option" data-theme-value="default">
       <span class="theme-preview default-preview"></span>
-      <span>☀️ 默认</span>
+      <span>☀️ <span data-i18n="themeDefault">默认</span></span>
     </div>
     <div class="theme-option" data-theme-value="dark">
       <span class="theme-preview dark-preview"></span>
-      <span>🌙 暗黑</span>
+      <span>🌙 <span data-i18n="themeDark">暗黑</span></span>
     </div>
     <div class="theme-option" data-theme-value="ocean">
       <span class="theme-preview ocean-preview"></span>
-      <span>🌊 海洋</span>
+      <span>🌊 <span data-i18n="themeOcean">海洋</span></span>
     </div>
     <div class="theme-option" data-theme-value="sakura">
       <span class="theme-preview sakura-preview"></span>
-      <span>🌸 樱花</span>
+      <span>🌸 <span data-i18n="themeSakura">樱花</span></span>
+    </div>
+  </div>
+
+  <!-- 语言切换面板 -->
+  <div class="theme-dropdown" id="language-dropdown" style="display:none;">
+    <div class="theme-option" data-language-value="zh_CN">
+      <span>🇨🇳 中文</span>
+    </div>
+    <div class="theme-option" data-language-value="en">
+      <span>🇺🇸 English</span>
     </div>
   </div>
 

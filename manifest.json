@@ -1,8 +1,9 @@
 {
   "manifest_version": 3,
-  "name": "PRISM 棱镜",
-  "version": "1.0.0",
-  "description": "网页资源透视镜 — 一键提取、分类展示、瀑布图分析、批量导出网页资源",
+  "name": "__MSG_extensionName__",
+  "version": "1.1.0",
+  "description": "__MSG_extensionDescription__",
+  "default_locale": "zh_CN",
   "permissions": [
     "activeTab",
     "scripting",

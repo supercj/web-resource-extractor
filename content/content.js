@@ -773,7 +773,7 @@
           const data = extractFromElement(el);
           sendResponse({ success: true, data });
         } else {
-          sendResponse({ success: false, error: '未找到指定元素' });
+          sendResponse({ success: false, error: chrome.i18n.getMessage('elementNotFound') || 'Element not found' });
         }
       } catch (err) {
         sendResponse({ success: false, error: err.message });

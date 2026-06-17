@@ -6,6 +6,9 @@
 (function () {
   'use strict';
 
+  // ── i18n 辅助函数 ──────────────────────────────────────
+  const i18n = (key, substitutions) => chrome.i18n.getMessage(key, substitutions);
+
   const defaultSettings = {
     slowThreshold: 1000,
     showSize: true,
@@ -95,7 +98,7 @@
     currentSettings = settings;
 
     const status = document.getElementById('save-status');
-    status.textContent = '✓ 设置已保存';
+    status.textContent = '✓ ' + i18n('settingsSaved');
     status.style.opacity = '1';
     setTimeout(() => { status.style.opacity = '0'; }, 2000);
   }
@@ -103,7 +106,7 @@
   // ── 恢复默认 ──────────────────────────────────────
 
   async function resetSettings() {
-    if (!confirm('确定要恢复默认设置吗？')) return;
+    if (!confirm(i18n('confirmReset'))) return;
 
     currentTheme = 'default';
     currentSettings = { ...defaultSettings };
@@ -118,7 +121,7 @@
     });
 
     const status = document.getElementById('save-status');
-    status.textContent = '✓ 已恢复默认设置';
+    status.textContent = '✓ ' + i18n('settingsReset');
     status.style.opacity = '1';
     setTimeout(() => { status.style.opacity = '0'; }, 2000);
   }

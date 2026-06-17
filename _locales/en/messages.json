@@ -1,0 +1,440 @@
+{
+  "extensionName": {
+    "message": "PRISM Lens",
+    "description": "Extension name"
+  },
+  "extensionDescription": {
+    "message": "Web Resource Extractor — Extract, classify, analyze and export all web resources",
+    "description": "Extension description"
+  },
+  "refresh": {
+    "message": "Refresh",
+    "description": "Refresh button"
+  },
+  "theme": {
+    "message": "Theme",
+    "description": "Theme button"
+  },
+  "settings": {
+    "message": "Settings",
+    "description": "Settings button"
+  },
+  "loading": {
+    "message": "Loading...",
+    "description": "Loading text"
+  },
+  "searchPlaceholder": {
+    "message": "Search by URL, domain...",
+    "description": "Search placeholder"
+  },
+  "tabAll": {
+    "message": "All",
+    "description": "All tab"
+  },
+  "tabImages": {
+    "message": "Images",
+    "description": "Images tab"
+  },
+  "tabScripts": {
+    "message": "Scripts",
+    "description": "Scripts tab"
+  },
+  "tabStyles": {
+    "message": "Styles",
+    "description": "Styles tab"
+  },
+  "tabFonts": {
+    "message": "Fonts",
+    "description": "Fonts tab"
+  },
+  "tabVideos": {
+    "message": "Videos",
+    "description": "Videos tab"
+  },
+  "tabAudios": {
+    "message": "Audios",
+    "description": "Audios tab"
+  },
+  "tabLinks": {
+    "message": "Links",
+    "description": "Links tab"
+  },
+  "tabThirdParty": {
+    "message": "3rd Party",
+    "description": "Third party tab"
+  },
+  "filterExternal": {
+    "message": "External",
+    "description": "External filter"
+  },
+  "filterLarge": {
+    "message": "Large (>100KB)",
+    "description": "Large file filter"
+  },
+  "filterSlow": {
+    "message": "Slow",
+    "description": "Slow loading filter"
+  },
+  "extensionFilter": {
+    "message": "Extension Filter",
+    "description": "Extension filter button"
+  },
+  "selectAll": {
+    "message": "All",
+    "description": "Select all"
+  },
+  "deselectAll": {
+    "message": "None",
+    "description": "Deselect all"
+  },
+  "noExtension": {
+    "message": "No extension data",
+    "description": "No extension message"
+  },
+  "btnSelectAll": {
+    "message": "Select All",
+    "description": "Select all button"
+  },
+  "btnDeselectAll": {
+    "message": "Deselect All",
+    "description": "Deselect all button"
+  },
+  "btnDownloadSelected": {
+    "message": "Download Selected",
+    "description": "Download selected button"
+  },
+  "btnExportZip": {
+    "message": "Export ZIP",
+    "description": "Export ZIP button"
+  },
+  "btnStatistics": {
+    "message": "Statistics",
+    "description": "Statistics button"
+  },
+  "btnWaterfall": {
+    "message": "Waterfall",
+    "description": "Waterfall button"
+  },
+  "btnExportJson": {
+    "message": "Export JSON",
+    "description": "Export JSON button"
+  },
+  "emptyStateTitle": {
+    "message": "No Resources",
+    "description": "Empty state title"
+  },
+  "emptyStateDescription": {
+    "message": "No resources found with current filters",
+    "description": "Empty state description"
+  },
+  "themeDefault": {
+    "message": "Default",
+    "description": "Default theme"
+  },
+  "themeDark": {
+    "message": "Dark",
+    "description": "Dark theme"
+  },
+  "themeOcean": {
+    "message": "Ocean",
+    "description": "Ocean theme"
+  },
+  "themeSakura": {
+    "message": "Sakura",
+    "description": "Sakura theme"
+  },
+  "statsTitle": {
+    "message": "Resource Statistics",
+    "description": "Statistics title"
+  },
+  "statsTotalResources": {
+    "message": "Total Resources",
+    "description": "Total resources"
+  },
+  "statsTotalSize": {
+    "message": "Total Size",
+    "description": "Total size"
+  },
+  "statsLargestResource": {
+    "message": "Largest Resource",
+    "description": "Largest resource"
+  },
+  "statsSlowestResource": {
+    "message": "Slowest Resource",
+    "description": "Slowest resource"
+  },
+  "statsTypeDistribution": {
+    "message": "Type Distribution",
+    "description": "Type distribution"
+  },
+  "waterfallTitle": {
+    "message": "Resource Loading Waterfall",
+    "description": "Waterfall title"
+  },
+  "close": {
+    "message": "Close",
+    "description": "Close button"
+  },
+  "download": {
+    "message": "Download",
+    "description": "Download button"
+  },
+  "copyUrl": {
+    "message": "Copy URL",
+    "description": "Copy URL"
+  },
+  "openInNewTab": {
+    "message": "Open in New Tab",
+    "description": "Open in new tab"
+  },
+  "extractSuccess": {
+    "message": "✅ Extract success",
+    "description": "Extract success message"
+  },
+  "extractFailed": {
+    "message": "❌ Extract failed",
+    "description": "Extract failed message"
+  },
+  "newResourcesFound": {
+    "message": "🔍 Found $COUNT$ new resources",
+    "description": "New resources found",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "5"
+      }
+    }
+  },
+  "downloadSuccess": {
+    "message": "Download success",
+    "description": "Download success"
+  },
+  "downloadFailed": {
+    "message": "Download failed",
+    "description": "Download failed"
+  },
+  "copySuccess": {
+    "message": "Copied to clipboard",
+    "description": "Copy success"
+  },
+  "exportSuccess": {
+    "message": "Export success",
+    "description": "Export success"
+  },
+  "exportFailed": {
+    "message": "Export failed",
+    "description": "Export failed"
+  },
+  "noResourceSelected": {
+    "message": "Please select resources first",
+    "description": "No resource selected"
+  },
+  "cannotConnectPage": {
+    "message": "Cannot connect to page, please refresh and try again!",
+    "description": "Cannot connect message"
+  },
+  "retryButton": {
+    "message": "Retry",
+    "description": "Retry button"
+  },
+  "selectedCount": {
+    "message": "Selected",
+    "description": "Selected count"
+  },
+  "items": {
+    "message": "items",
+    "description": "Items unit"
+  },
+  "extracting": {
+    "message": "Extracting resources...",
+    "description": "Extracting message"
+  },
+  "downloadingResources": {
+    "message": "Downloading $COUNT$ resources",
+    "description": "Downloading resources",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "5"
+      }
+    }
+  },
+  "noResourcesToExport": {
+    "message": "No resources to export",
+    "description": "No resources to export"
+  },
+  "packing": {
+    "message": "Packing...",
+    "description": "Packing"
+  },
+  "fallbackToUrlList": {
+    "message": "All resources failed to download, fallback to URL list",
+    "description": "Fallback message"
+  },
+  "exportedResources": {
+    "message": "Successfully exported $COUNT$ resources",
+    "description": "Exported success",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "10"
+      }
+    }
+  },
+  "downloadStarted": {
+    "message": "Download started",
+    "description": "Download started"
+  },
+  "pleaseExtractFirst": {
+    "message": "Please extract resources first",
+    "description": "Extract first"
+  },
+  "noPerformanceData": {
+    "message": "No performance data",
+    "description": "No performance data"
+  },
+  "switchedToTheme": {
+    "message": "Switched to $THEME$ theme",
+    "description": "Switched theme",
+    "placeholders": {
+      "theme": {
+        "content": "$1",
+        "example": "Dark"
+      }
+    }
+  },
+  "pageLoad": {
+    "message": "Page Load",
+    "description": "Page load time"
+  },
+  "media": {
+    "message": "Media",
+    "description": "Media resources"
+  },
+  "resourceSizeDistribution": {
+    "message": "Resource Size Distribution",
+    "description": "Resource size distribution"
+  },
+  "cannotGetCurrentTab": {
+    "message": "Cannot get current tab",
+    "description": "Cannot get tab"
+  },
+  "cannotUseOnInternalPage": {
+    "message": "Cannot use on browser internal pages, please use on normal web pages",
+    "description": "Internal page restriction"
+  },
+  "extractFailedRefresh": {
+    "message": "Extract failed, please refresh and try again",
+    "description": "Extract failed"
+  },
+  "noExtensionData": {
+    "message": "No extension data",
+    "description": "No extension data"
+  },
+  "waterfallStart": {
+    "message": "Start",
+    "description": "Waterfall start time"
+  },
+  "waterfallDuration": {
+    "message": "Duration",
+    "description": "Waterfall duration"
+  },
+  "waterfallSize": {
+    "message": "Size",
+    "description": "Waterfall size"
+  },
+  "moreRequests": {
+    "message": "$COUNT$ more requests",
+    "description": "More requests",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "50"
+      }
+    }
+  },
+  "optionsSubtitle": {
+    "message": "Customize appearance and behavior",
+    "description": "Options subtitle"
+  },
+  "themeSectionTitle": {
+    "message": "Theme",
+    "description": "Theme section title"
+  },
+  "themeSectionDesc": {
+    "message": "Choose your favorite theme style",
+    "description": "Theme section description"
+  },
+  "behaviorSettings": {
+    "message": "Behavior Settings",
+    "description": "Behavior settings"
+  },
+  "slowLoadThreshold": {
+    "message": "Slow Load Threshold (ms)",
+    "description": "Slow load threshold"
+  },
+  "slowLoadHint": {
+    "message": "Resources exceeding this time will be marked as slow",
+    "description": "Slow load hint"
+  },
+  "defaultTab": {
+    "message": "Default Tab",
+    "description": "Default tab"
+  },
+  "defaultExportFormat": {
+    "message": "Default Export Format",
+    "description": "Default export format"
+  },
+  "exportZip": {
+    "message": "ZIP Archive",
+    "description": "ZIP format"
+  },
+  "exportUrls": {
+    "message": "URL List (.txt)",
+    "description": "URL list"
+  },
+  "showResourceSize": {
+    "message": "Show Resource Size",
+    "description": "Show size"
+  },
+  "showLoadDuration": {
+    "message": "Show Load Duration",
+    "description": "Show duration"
+  },
+  "saveSettings": {
+    "message": "Save Settings",
+    "description": "Save settings"
+  },
+  "resetDefaults": {
+    "message": "Reset to Defaults",
+    "description": "Reset defaults"
+  },
+  "settingsSaved": {
+    "message": "Settings saved",
+    "description": "Save success"
+  },
+  "settingsReset": {
+    "message": "Settings reset to defaults",
+    "description": "Reset success"
+  },
+  "confirmReset": {
+    "message": "Are you sure you want to reset to default settings?",
+    "description": "Confirm reset"
+  },
+  "elementNotFound": {
+    "message": "Element not found",
+    "description": "Element not found"
+  },
+  "language": {
+    "message": "Language",
+    "description": "Language switcher"
+  },
+  "languageChanged": {
+    "message": "Language changed",
+    "description": "Language changed"
+  },
+  "reloadExtension": {
+    "message": "Please reopen the popup to see the changes",
+    "description": "Reload prompt"
+  }
+}

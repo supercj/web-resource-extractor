@@ -6,6 +6,9 @@
 (function () {
   'use strict';
 
+  // ── i18n 辅助函数 ──────────────────────────────────────
+  const i18n = (key, substitutions) => chrome.i18n.getMessage(key, substitutions);
+
   // ── 全局状态 ──────────────────────────────────────
 
   let currentData = null;
@@ -45,6 +48,7 @@
     waterfallOverlay: $('#waterfall-overlay'),
     waterfallBody: $('#waterfall-body'),
     themeDropdown: $('#theme-dropdown'),
+    languageDropdown: $('#language-dropdown'),
     toastContainer: $('#toast-container')
   };
 
@@ -84,6 +88,12 @@
     $('#btn-theme').addEventListener('click', (e) => {
       e.stopPropagation();
       toggleThemeDropdown();
+    });
+
+    // 语言切换
+    $('#btn-language').addEventListener('click', (e) => {
+      e.stopPropagation();
+      toggleLanguageDropdown();
     });
 
     // 设置页
@@ -176,15 +186,25 @@
     $$('.theme-option').forEach(opt => {
       opt.addEventListener('click', () => {
         const theme = opt.dataset.themeValue;
-        applyTheme(theme);
-        dom.themeDropdown.style.display = 'none';
+        if (theme) {
+          applyTheme(theme);
+          dom.themeDropdown.style.display = 'none';
+        }
+        const language = opt.dataset.languageValue;
+        if (language) {
+          switchLanguage(language);
+          dom.languageDropdown.style.display = 'none';
+        }
       });
     });
 
-    // 点击其他地方关闭主题下拉
+    // 点击其他地方关闭下拉菜单
     document.addEventListener('click', (e) => {
       if (!dom.themeDropdown.contains(e.target) && e.target !== $('#btn-theme')) {
         dom.themeDropdown.style.display = 'none';
+      }
+      if (!dom.languageDropdown.contains(e.target) && e.target !== $('#btn-language')) {
+        dom.languageDropdown.style.display = 'none';
       }
     });
 
@@ -194,6 +214,7 @@
         dom.statsOverlay.style.display = 'none';
         dom.waterfallOverlay.style.display = 'none';
         dom.themeDropdown.style.display = 'none';
+        dom.languageDropdown.style.display = 'none';
       }
     });
   }
@@ -208,7 +229,7 @@
     try {
       const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
       if (!tab || !tab.id) {
-        showError('无法获取当前标签页');
+        showError(i18n('cannotGetCurrentTab'));
         return;
       }
 
@@ -218,7 +239,7 @@
           url.startsWith('edge://') || url.startsWith('about:') ||
           url.startsWith('chrome.google.com/webstore') ||
           url.startsWith('https://chrome.google.com/webstore')) {
-        showError('无法在浏览器内部页面使用此插件，请在普通网页上使用');
+        showError(i18n('cannotUseOnInternalPage'));
         return;
       }
 
@@ -271,7 +292,7 @@
             }
             await new Promise(r => setTimeout(r, 300 * attempt)); // 递增等待
           } else {
-            showError('无法连接到页面，请刷新页面后重试');
+            showError(i18n('cannotConnectPage'));
             return;
           }
         }
@@ -281,13 +302,13 @@
         currentData = response.data;
         updateTabCounts();
         renderResourceList();
-        showToast('资源提取成功', 'success');
+        showToast(i18n('extractSuccess'), 'success');
       } else {
-        showError(response?.error || '提取失败，请刷新页面后重试');
+        showError(response?.error || i18n('extractFailedRefresh'));
       }
     } catch (err) {
       console.error('[WRE] 提取错误:', err);
-      showError('无法连接到页面: ' + err.message);
+      showError(i18n('cannotConnectPage') + ': ' + err.message);
     } finally {
       dom.loading.style.display = 'none';
     }
@@ -328,7 +349,7 @@
     const extList = $('#ext-list');
 
     if (availableExts.length === 0) {
-      extList.innerHTML = '<div style="padding:8px;color:var(--text-tertiary);font-size:12px;">无后缀数据</div>';
+      extList.innerHTML = `<div style="padding:8px;color:var(--text-tertiary);font-size:12px;">${i18n('noExtensionData')}</div>`;
       return;
     }
 
@@ -357,22 +378,30 @@
           selectedExts.clear();
         }
 
-        if (selectedExts.size === 0) {
-          // 之前是全选状态，现在取消某个 → 选中其他所有
-          availableExts.forEach(item => {
-            if (item.ext !== ext) {
-              selectedExts.add(item.ext);
-            }
-          });
-        } else {
-          // 之前有筛选
-          if (e.target.checked) {
+        if (e.target.checked) {
+          // 勾选一个后缀
+          if (selectedExts.size === 0) {
+            // 之前是全选状态，现在只选择这一个
             selectedExts.add(ext);
-            // 如果全部都选中了，清空表示不过滤
+          } else {
+            // 之前已有筛选，添加这个后缀
+            selectedExts.add(ext);
+            // 如果全部都选中了，清空表示回到全选
             if (selectedExts.size === availableExts.length) {
               selectedExts.clear();
             }
+          }
+        } else {
+          // 取消勾选一个后缀
+          if (selectedExts.size === 0) {
+            // 之前是全选状态，现在取消一个 → 选中其他所有
+            availableExts.forEach(item => {
+              if (item.ext !== ext) {
+                selectedExts.add(item.ext);
+              }
+            });
           } else {
+            // 之前有筛选，删除这个后缀
             selectedExts.delete(ext);
             // 如果全部取消，标记为"全部不选"
             if (selectedExts.size === 0) {
@@ -530,9 +559,9 @@
           </div>
         </div>
         <div class="resource-actions">
-          <button class="action-btn btn-copy" data-url="${escapeHtml(item.url || '')}" title="复制链接">📋</button>
-          <button class="action-btn btn-open" data-url="${escapeHtml(item.url || '')}" title="新标签页打开">🔗</button>
-          <button class="action-btn btn-download" data-url="${escapeHtml(item.url || '')}" title="下载">📥</button>
+          <button class="action-btn btn-copy" data-url="${escapeHtml(item.url || '')}" title="${i18n('copyUrl')}">📋</button>
+          <button class="action-btn btn-open" data-url="${escapeHtml(item.url || '')}" title="${i18n('openInNewTab')}">🔗</button>
+          <button class="action-btn btn-download" data-url="${escapeHtml(item.url || '')}" title="${i18n('download')}">📥</button>
         </div>
       </div>
     `;
@@ -600,15 +629,15 @@
     const urls = [...selectedItems].map(i => filtered[i]?.url).filter(Boolean);
 
     if (urls.length === 0) {
-      showToast('请先选择资源', 'info');
+      showToast(i18n('noResourceSelected'), 'info');
       return;
     }
 
     try {
       await chrome.runtime.sendMessage({ action: 'downloadBatch', urls });
-      showToast(`开始下载 ${urls.length} 个资源`, 'success');
+      showToast(i18n('downloadingResources', String(urls.length)), 'success');
     } catch (err) {
-      showToast('下载失败: ' + err.message, 'error');
+      showToast(i18n('downloadFailed') + ': ' + err.message, 'error');
     }
   }
 
@@ -620,11 +649,11 @@
       : filtered;
 
     if (items.length === 0) {
-      showToast('没有可导出的资源', 'info');
+      showToast(i18n('noResourcesToExport'), 'info');
       return;
     }
 
-    showToast('正在打包...', 'info');
+    showToast(i18n('packing'), 'info');
 
     try {
       const zip = new SimpleZip();
@@ -681,7 +710,7 @@
       await Promise.all(fetchPromises);
 
       if (added === 0) {
-        showToast('所有资源均无法下载，已回退为导出 URL 列表', 'info');
+        showToast(i18n('fallbackToUrlList'), 'info');
         const urlList = items.map(i => i.url).join('\n');
         const blob = new Blob([urlList], { type: 'text/plain' });
         const url = URL.createObjectURL(blob);
@@ -696,10 +725,10 @@
       downloadBlob(url, `${currentTab}_resources.zip`);
       URL.revokeObjectURL(url);
 
-      showToast(`成功导出 ${added} 个资源`, 'success');
+      showToast(i18n('exportedResources', String(added)), 'success');
     } catch (err) {
       console.error('[WRE] 导出失败:', err);
-      showToast('导出失败: ' + err.message, 'error');
+      showToast(i18n('exportFailed') + ': ' + err.message, 'error');
     }
   }
 
@@ -708,7 +737,7 @@
   async function downloadResource(url) {
     try {
       await chrome.runtime.sendMessage({ action: 'downloadResource', url });
-      showToast('已开始下载', 'success');
+      showToast(i18n('downloadStarted'), 'success');
     } catch (err) {
       // 降级：在新标签页打开
       chrome.tabs.create({ url });
@@ -719,7 +748,7 @@
 
   function showStatsPanel() {
     if (!currentData) {
-      showToast('请先提取资源', 'info');
+      showToast(i18n('pleaseExtractFirst'), 'info');
       return;
     }
 
@@ -756,44 +785,44 @@
       <div class="stats-grid">
         <div class="stat-card">
           <div class="stat-number">${s.totalResources}</div>
-          <div class="stat-label">资源总数</div>
+          <div class="stat-label">${i18n('statsTotalResources')}</div>
         </div>
         <div class="stat-card">
           <div class="stat-number">${formatSize(totalSize)}</div>
-          <div class="stat-label">总大小</div>
+          <div class="stat-label">${i18n('statsTotalSize')}</div>
         </div>
         <div class="stat-card">
           <div class="stat-number">${Math.round(totalDuration)}ms</div>
-          <div class="stat-label">页面加载</div>
+          <div class="stat-label">${i18n('pageLoad')}</div>
         </div>
         <div class="stat-card">
           <div class="stat-number">${s.totalImages}</div>
-          <div class="stat-label">图片</div>
+          <div class="stat-label">${i18n('tabImages')}</div>
         </div>
         <div class="stat-card">
           <div class="stat-number">${s.totalScripts}</div>
-          <div class="stat-label">脚本</div>
+          <div class="stat-label">${i18n('tabScripts')}</div>
         </div>
         <div class="stat-card">
           <div class="stat-number">${s.totalStyles}</div>
-          <div class="stat-label">样式</div>
+          <div class="stat-label">${i18n('tabStyles')}</div>
         </div>
         <div class="stat-card">
           <div class="stat-number">${s.totalFonts}</div>
-          <div class="stat-label">字体</div>
+          <div class="stat-label">${i18n('tabFonts')}</div>
         </div>
         <div class="stat-card">
           <div class="stat-number">${s.totalVideos + s.totalAudios}</div>
-          <div class="stat-label">媒体</div>
+          <div class="stat-label">${i18n('media')}</div>
         </div>
         <div class="stat-card">
           <div class="stat-number">${s.totalThirdParty}</div>
-          <div class="stat-label">第三方</div>
+          <div class="stat-label">${i18n('tabThirdParty')}</div>
         </div>
       </div>
 
       <div class="stats-chart">
-        <h3>📊 资源大小分布</h3>
+        <h3>📊 ${i18n('resourceSizeDistribution')}</h3>
         <div class="chart-bar-container">
           ${Object.entries(sizeByType).map(([type, size]) => `
             <div class="chart-bar-row">
@@ -815,7 +844,7 @@
 
   function showWaterfallPanel() {
     if (!currentData) {
-      showToast('请先提取资源', 'info');
+      showToast(i18n('pleaseExtractFirst'), 'info');
       return;
     }
 
@@ -823,7 +852,7 @@
       .sort((a, b) => a.startTime - b.startTime);
 
     if (perfEntries.length === 0) {
-      showToast('无性能数据', 'info');
+      showToast(i18n('noPerformanceData'), 'info');
       return;
     }
 
@@ -850,7 +879,7 @@
           const isSlow = entry.duration > settings.slowThreshold;
           const name = getShortUrl(entry.name);
           return `
-            <div class="waterfall-row" title="${escapeHtml(entry.name)}\n开始: ${Math.round(entry.startTime)}ms\n耗时: ${Math.round(entry.duration)}ms\n大小: ${formatSize(entry.transferSize)}">
+            <div class="waterfall-row" title="${escapeHtml(entry.name)}\n${i18n('waterfallStart')}: ${Math.round(entry.startTime)}ms\n${i18n('waterfallDuration')}: ${Math.round(entry.duration)}ms\n${i18n('waterfallSize')}: ${formatSize(entry.transferSize)}">
               <span class="waterfall-label">${escapeHtml(name)}</span>
               <div class="waterfall-bar-track">
                 <div class="waterfall-bar ${isSlow ? 'slow' : 'normal'}" style="left: ${left}%; width: ${width}%;"></div>
@@ -860,7 +889,7 @@
             </div>
           `;
         }).join('')}
-        ${perfEntries.length > 100 ? `<div class="waterfall-row"><span class="waterfall-label" style="color:var(--text-tertiary);">... 还有 ${perfEntries.length - 100} 个请求</span></div>` : ''}
+        ${perfEntries.length > 100 ? `<div class="waterfall-row"><span class="waterfall-label" style="color:var(--text-tertiary);">... ${i18n('moreRequests', String(perfEntries.length - 100))}</span></div>` : ''}
       </div>
     `;
 
@@ -885,12 +914,28 @@
     currentTheme = theme;
     document.documentElement.setAttribute('data-theme', theme);
     await chrome.storage.sync.set({ theme });
-    showToast(`已切换到 ${getThemeName(theme)} 主题`, 'success');
+    showToast(i18n('switchedToTheme', getThemeName(theme)), 'success');
   }
 
   function getThemeName(theme) {
-    const names = { default: '默认', dark: '暗黑', ocean: '海洋', sakura: '樱花' };
-    return names[theme] || theme;
+    const key = 'theme' + theme.charAt(0).toUpperCase() + theme.slice(1);
+    return i18n(key) || theme;
+  }
+
+  // ── 语言管理 ──────────────────────────────────────
+
+  function toggleLanguageDropdown() {
+    const isVisible = dom.languageDropdown.style.display !== 'none';
+    dom.languageDropdown.style.display = isVisible ? 'none' : 'block';
+  }
+
+  async function switchLanguage(language) {
+    await chrome.storage.sync.set({ language });
+    showToast(i18n('languageChanged'), 'success');
+    // 提示用户需要重新加载扩展
+    setTimeout(() => {
+      showToast(i18n('reloadExtension'), 'info');
+    }, 1500);
   }
 
   // ── 工具函数 ──────────────────────────────────────
@@ -989,7 +1034,7 @@
   async function copyToClipboard(text) {
     try {
       await navigator.clipboard.writeText(text);
-      showToast('已复制到剪贴板', 'success');
+      showToast(i18n('copySuccess'), 'success');
     } catch {
       // 降级方案
       const textarea = document.createElement('textarea');
@@ -1000,7 +1045,7 @@
       textarea.select();
       document.execCommand('copy');
       document.body.removeChild(textarea);
-      showToast('已复制到剪贴板', 'success');
+      showToast(i18n('copySuccess'), 'success');
     }
   }
 

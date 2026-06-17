@@ -1,0 +1,440 @@
+{
+  "extensionName": {
+    "message": "PRISM 棱镜",
+    "description": "扩展名称"
+  },
+  "extensionDescription": {
+    "message": "网页资源透视镜 — 一键提取、分类展示、瀑布图分析、批量导出网页资源",
+    "description": "扩展描述"
+  },
+  "refresh": {
+    "message": "刷新",
+    "description": "刷新按钮"
+  },
+  "theme": {
+    "message": "主题",
+    "description": "主题按钮"
+  },
+  "settings": {
+    "message": "设置",
+    "description": "设置按钮"
+  },
+  "loading": {
+    "message": "加载中...",
+    "description": "加载提示"
+  },
+  "searchPlaceholder": {
+    "message": "搜索资源 URL、域名...",
+    "description": "搜索框占位符"
+  },
+  "tabAll": {
+    "message": "全部",
+    "description": "全部标签页"
+  },
+  "tabImages": {
+    "message": "图片",
+    "description": "图片标签页"
+  },
+  "tabScripts": {
+    "message": "脚本",
+    "description": "脚本标签页"
+  },
+  "tabStyles": {
+    "message": "样式",
+    "description": "样式标签页"
+  },
+  "tabFonts": {
+    "message": "字体",
+    "description": "字体标签页"
+  },
+  "tabVideos": {
+    "message": "视频",
+    "description": "视频标签页"
+  },
+  "tabAudios": {
+    "message": "音频",
+    "description": "音频标签页"
+  },
+  "tabLinks": {
+    "message": "链接",
+    "description": "链接标签页"
+  },
+  "tabThirdParty": {
+    "message": "第三方",
+    "description": "第三方标签页"
+  },
+  "filterExternal": {
+    "message": "外部资源",
+    "description": "外部资源筛选"
+  },
+  "filterLarge": {
+    "message": "大文件 (>100KB)",
+    "description": "大文件筛选"
+  },
+  "filterSlow": {
+    "message": "慢加载",
+    "description": "慢加载筛选"
+  },
+  "extensionFilter": {
+    "message": "后缀筛选",
+    "description": "后缀筛选按钮"
+  },
+  "selectAll": {
+    "message": "全选",
+    "description": "全选按钮"
+  },
+  "deselectAll": {
+    "message": "清空",
+    "description": "清空按钮"
+  },
+  "noExtension": {
+    "message": "无后缀数据",
+    "description": "无后缀提示"
+  },
+  "btnSelectAll": {
+    "message": "全选",
+    "description": "全选资源按钮"
+  },
+  "btnDeselectAll": {
+    "message": "取消全选",
+    "description": "取消全选按钮"
+  },
+  "btnDownloadSelected": {
+    "message": "下载选中",
+    "description": "下载选中按钮"
+  },
+  "btnExportZip": {
+    "message": "导出 ZIP",
+    "description": "导出ZIP按钮"
+  },
+  "btnStatistics": {
+    "message": "统计",
+    "description": "统计按钮"
+  },
+  "btnWaterfall": {
+    "message": "瀑布图",
+    "description": "瀑布图按钮"
+  },
+  "btnExportJson": {
+    "message": "导出 JSON",
+    "description": "导出JSON按钮"
+  },
+  "emptyStateTitle": {
+    "message": "暂无资源",
+    "description": "空状态标题"
+  },
+  "emptyStateDescription": {
+    "message": "当前筛选条件下没有找到资源",
+    "description": "空状态描述"
+  },
+  "themeDefault": {
+    "message": "默认",
+    "description": "默认主题"
+  },
+  "themeDark": {
+    "message": "暗黑",
+    "description": "暗黑主题"
+  },
+  "themeOcean": {
+    "message": "海洋",
+    "description": "海洋主题"
+  },
+  "themeSakura": {
+    "message": "樱花",
+    "description": "樱花主题"
+  },
+  "statsTitle": {
+    "message": "资源统计",
+    "description": "统计标题"
+  },
+  "statsTotalResources": {
+    "message": "资源总数",
+    "description": "资源总数"
+  },
+  "statsTotalSize": {
+    "message": "总大小",
+    "description": "总大小"
+  },
+  "statsLargestResource": {
+    "message": "最大资源",
+    "description": "最大资源"
+  },
+  "statsSlowestResource": {
+    "message": "最慢资源",
+    "description": "最慢资源"
+  },
+  "statsTypeDistribution": {
+    "message": "类型分布",
+    "description": "类型分布"
+  },
+  "waterfallTitle": {
+    "message": "资源加载瀑布图",
+    "description": "瀑布图标题"
+  },
+  "close": {
+    "message": "关闭",
+    "description": "关闭按钮"
+  },
+  "download": {
+    "message": "下载",
+    "description": "下载按钮"
+  },
+  "copyUrl": {
+    "message": "复制链接",
+    "description": "复制链接"
+  },
+  "openInNewTab": {
+    "message": "新标签页打开",
+    "description": "新标签页打开"
+  },
+  "extractSuccess": {
+    "message": "✅ 资源提取成功",
+    "description": "提取成功提示"
+  },
+  "extractFailed": {
+    "message": "❌ 提取失败",
+    "description": "提取失败提示"
+  },
+  "newResourcesFound": {
+    "message": "🔍 发现 $COUNT$ 个新资源",
+    "description": "发现新资源提示",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "5"
+      }
+    }
+  },
+  "downloadSuccess": {
+    "message": "下载成功",
+    "description": "下载成功"
+  },
+  "downloadFailed": {
+    "message": "下载失败",
+    "description": "下载失败"
+  },
+  "copySuccess": {
+    "message": "已复制到剪贴板",
+    "description": "复制成功"
+  },
+  "exportSuccess": {
+    "message": "导出成功",
+    "description": "导出成功"
+  },
+  "exportFailed": {
+    "message": "导出失败",
+    "description": "导出失败"
+  },
+  "noResourceSelected": {
+    "message": "请先选择资源",
+    "description": "未选择资源提示"
+  },
+  "cannotConnectPage": {
+    "message": "无法连接到页面，请刷新页面后重试！",
+    "description": "连接失败提示"
+  },
+  "retryButton": {
+    "message": "重试",
+    "description": "重试按钮"
+  },
+  "selectedCount": {
+    "message": "已选",
+    "description": "已选择数量"
+  },
+  "items": {
+    "message": "项",
+    "description": "项目单位"
+  },
+  "extracting": {
+    "message": "正在提取资源...",
+    "description": "提取中提示"
+  },
+  "downloadingResources": {
+    "message": "开始下载 $COUNT$ 个资源",
+    "description": "下载资源提示",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "5"
+      }
+    }
+  },
+  "noResourcesToExport": {
+    "message": "没有可导出的资源",
+    "description": "无资源导出"
+  },
+  "packing": {
+    "message": "正在打包...",
+    "description": "打包中"
+  },
+  "fallbackToUrlList": {
+    "message": "所有资源均无法下载，已回退为导出 URL 列表",
+    "description": "回退提示"
+  },
+  "exportedResources": {
+    "message": "成功导出 $COUNT$ 个资源",
+    "description": "导出成功",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "10"
+      }
+    }
+  },
+  "downloadStarted": {
+    "message": "已开始下载",
+    "description": "开始下载"
+  },
+  "pleaseExtractFirst": {
+    "message": "请先提取资源",
+    "description": "先提取资源"
+  },
+  "noPerformanceData": {
+    "message": "无性能数据",
+    "description": "无性能数据"
+  },
+  "switchedToTheme": {
+    "message": "已切换到 $THEME$ 主题",
+    "description": "切换主题",
+    "placeholders": {
+      "theme": {
+        "content": "$1",
+        "example": "暗黑"
+      }
+    }
+  },
+  "pageLoad": {
+    "message": "页面加载",
+    "description": "页面加载时间"
+  },
+  "media": {
+    "message": "媒体",
+    "description": "媒体资源"
+  },
+  "resourceSizeDistribution": {
+    "message": "资源大小分布",
+    "description": "资源大小分布"
+  },
+  "cannotGetCurrentTab": {
+    "message": "无法获取当前标签页",
+    "description": "无法获取标签页"
+  },
+  "cannotUseOnInternalPage": {
+    "message": "无法在浏览器内部页面使用此插件，请在普通网页上使用",
+    "description": "内部页面限制"
+  },
+  "extractFailedRefresh": {
+    "message": "提取失败，请刷新页面后重试",
+    "description": "提取失败提示"
+  },
+  "noExtensionData": {
+    "message": "无后缀数据",
+    "description": "无后缀数据"
+  },
+  "waterfallStart": {
+    "message": "开始",
+    "description": "瀑布图开始时间"
+  },
+  "waterfallDuration": {
+    "message": "耗时",
+    "description": "瀑布图耗时"
+  },
+  "waterfallSize": {
+    "message": "大小",
+    "description": "瀑布图大小"
+  },
+  "moreRequests": {
+    "message": "还有 $COUNT$ 个请求",
+    "description": "更多请求",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "50"
+      }
+    }
+  },
+  "optionsSubtitle": {
+    "message": "自定义插件外观和行为",
+    "description": "设置页副标题"
+  },
+  "themeSectionTitle": {
+    "message": "皮肤主题",
+    "description": "主题区域标题"
+  },
+  "themeSectionDesc": {
+    "message": "选择你喜欢的主题风格",
+    "description": "主题区域描述"
+  },
+  "behaviorSettings": {
+    "message": "行为设置",
+    "description": "行为设置"
+  },
+  "slowLoadThreshold": {
+    "message": "慢加载阈值 (ms)",
+    "description": "慢加载阈值"
+  },
+  "slowLoadHint": {
+    "message": "超过此时间的资源将被标记为「慢加载」",
+    "description": "慢加载提示"
+  },
+  "defaultTab": {
+    "message": "默认分类 Tab",
+    "description": "默认分类"
+  },
+  "defaultExportFormat": {
+    "message": "默认导出格式",
+    "description": "默认导出格式"
+  },
+  "exportZip": {
+    "message": "ZIP 压缩包",
+    "description": "ZIP格式"
+  },
+  "exportUrls": {
+    "message": "URL 列表 (.txt)",
+    "description": "URL列表"
+  },
+  "showResourceSize": {
+    "message": "显示资源大小",
+    "description": "显示大小"
+  },
+  "showLoadDuration": {
+    "message": "显示加载耗时",
+    "description": "显示耗时"
+  },
+  "saveSettings": {
+    "message": "保存设置",
+    "description": "保存设置"
+  },
+  "resetDefaults": {
+    "message": "恢复默认",
+    "description": "恢复默认"
+  },
+  "settingsSaved": {
+    "message": "设置已保存",
+    "description": "保存成功"
+  },
+  "settingsReset": {
+    "message": "已恢复默认设置",
+    "description": "重置成功"
+  },
+  "confirmReset": {
+    "message": "确定要恢复默认设置吗？",
+    "description": "确认重置"
+  },
+  "elementNotFound": {
+    "message": "未找到指定元素",
+    "description": "元素未找到"
+  },
+  "language": {
+    "message": "语言",
+    "description": "语言切换"
+  },
+  "languageChanged": {
+    "message": "语言已切换",
+    "description": "语言已切换"
+  },
+  "reloadExtension": {
+    "message": "请重新打开弹窗查看效果",
+    "description": "重新加载提示"
+  }
+}

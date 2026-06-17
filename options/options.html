@@ -3,24 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Web Resource Extractor - 设置</title>
+  <title>Settings</title>
   <link rel="stylesheet" href="../themes/default.css">
   <link rel="stylesheet" href="../themes/dark.css">
   <link rel="stylesheet" href="../themes/ocean.css">
   <link rel="stylesheet" href="../themes/sakura.css">
   <link rel="stylesheet" href="options.css">
+  <script src="../lib/i18n.js"></script>
 </head>
 <body>
   <div class="options-container">
     <header class="options-header">
-      <h1>⚙️ Web Resource Extractor 设置</h1>
-      <p class="subtitle">自定义插件外观和行为</p>
+      <h1>⚙️ <span data-i18n="extensionName">PRISM 棱镜</span> <span data-i18n="settings">设置</span></h1>
+      <p class="subtitle" data-i18n="optionsSubtitle">自定义插件外观和行为</p>
     </header>
 
     <!-- 主题选择 -->
     <section class="options-section">
-      <h2>🎨 皮肤主题</h2>
-      <p class="section-desc">选择你喜欢的主题风格</p>
+      <h2>🎨 <span data-i18n="themeSectionTitle">皮肤主题</span></h2>
+      <p class="section-desc" data-i18n="themeSectionDesc">选择你喜欢的主题风格</p>
       <div class="theme-grid" id="theme-grid">
         <div class="theme-card" data-theme="default">
           <div class="theme-preview-box default-theme">
@@ -31,7 +32,7 @@
               <div class="preview-item"></div>
             </div>
           </div>
-          <div class="theme-card-label">☀️ 默认</div>
+          <div class="theme-card-label">☀️ <span data-i18n="themeDefault">默认</span></div>
           <span class="theme-check" style="display:none;">✓</span>
         </div>
         <div class="theme-card" data-theme="dark">
@@ -43,7 +44,7 @@
               <div class="preview-item"></div>
             </div>
           </div>
-          <div class="theme-card-label">🌙 暗黑</div>
+          <div class="theme-card-label">🌙 <span data-i18n="themeDark">暗黑</span></div>
           <span class="theme-check" style="display:none;">✓</span>
         </div>
         <div class="theme-card" data-theme="ocean">
@@ -55,7 +56,7 @@
               <div class="preview-item"></div>
             </div>
           </div>
-          <div class="theme-card-label">🌊 海洋</div>
+          <div class="theme-card-label">🌊 <span data-i18n="themeOcean">海洋</span></div>
           <span class="theme-check" style="display:none;">✓</span>
         </div>
         <div class="theme-card" data-theme="sakura">
@@ -67,7 +68,7 @@
               <div class="preview-item"></div>
             </div>
           </div>
-          <div class="theme-card-label">🌸 樱花</div>
+          <div class="theme-card-label">🌸 <span data-i18n="themeSakura">樱花</span></div>
           <span class="theme-check" style="display:none;">✓</span>
         </div>
       </div>
@@ -75,43 +76,43 @@
 
     <!-- 行为设置 -->
     <section class="options-section">
-      <h2>⚙️ 行为设置</h2>
+      <h2>⚙️ <span data-i18n="behaviorSettings">行为设置</span></h2>
       <div class="setting-group">
         <div class="setting-item">
-          <label for="slow-threshold">慢加载阈值 (ms)</label>
+          <label for="slow-threshold" data-i18n="slowLoadThreshold">慢加载阈值 (ms)</label>
           <input type="number" id="slow-threshold" min="100" max="10000" step="100" value="1000">
-          <span class="setting-hint">超过此时间的资源将被标记为「慢加载」</span>
+          <span class="setting-hint" data-i18n="slowLoadHint">超过此时间的资源将被标记为「慢加载」</span>
         </div>
         <div class="setting-item">
-          <label for="default-tab">默认分类 Tab</label>
+          <label for="default-tab" data-i18n="defaultTab">默认分类 Tab</label>
           <select id="default-tab">
-            <option value="images">🖼️ 图片</option>
-            <option value="scripts">📜 脚本</option>
-            <option value="styles">🎨 样式</option>
-            <option value="fonts">🔤 字体</option>
-            <option value="videos">🎬 视频</option>
-            <option value="audios">🔊 音频</option>
-            <option value="links">🔗 链接</option>
-            <option value="third-party">📦 第三方</option>
+            <option value="images">🖼️ <span data-i18n="tabImages">图片</span></option>
+            <option value="scripts">📜 <span data-i18n="tabScripts">脚本</span></option>
+            <option value="styles">🎨 <span data-i18n="tabStyles">样式</span></option>
+            <option value="fonts">🔤 <span data-i18n="tabFonts">字体</span></option>
+            <option value="videos">🎬 <span data-i18n="tabVideos">视频</span></option>
+            <option value="audios">🔊 <span data-i18n="tabAudios">音频</span></option>
+            <option value="links">🔗 <span data-i18n="tabLinks">链接</span></option>
+            <option value="third-party">📦 <span data-i18n="tabThirdParty">第三方</span></option>
           </select>
         </div>
         <div class="setting-item">
-          <label for="export-format">默认导出格式</label>
+          <label for="export-format" data-i18n="defaultExportFormat">默认导出格式</label>
           <select id="export-format">
-            <option value="zip">📦 ZIP 压缩包</option>
-            <option value="urls">📝 URL 列表 (.txt)</option>
+            <option value="zip" data-i18n="exportZip">📦 ZIP 压缩包</option>
+            <option value="urls" data-i18n="exportUrls">📝 URL 列表 (.txt)</option>
           </select>
         </div>
         <div class="setting-item checkbox-item">
           <label>
             <input type="checkbox" id="show-size" checked>
-            显示资源大小
+            <span data-i18n="showResourceSize">显示资源大小</span>
           </label>
         </div>
         <div class="setting-item checkbox-item">
           <label>
             <input type="checkbox" id="show-duration" checked>
-            显示加载耗时
+            <span data-i18n="showLoadDuration">显示加载耗时</span>
           </label>
         </div>
       </div>
@@ -119,8 +120,8 @@
 
     <!-- 保存按钮 -->
     <div class="options-footer">
-      <button id="btn-save" class="btn-save">💾 保存设置</button>
-      <button id="btn-reset" class="btn-reset">🔄 恢复默认</button>
+      <button id="btn-save" class="btn-save">💾 <span data-i18n="saveSettings">保存设置</span></button>
+      <button id="btn-reset" class="btn-reset">🔄 <span data-i18n="resetDefaults">恢复默认</span></button>
       <span class="save-status" id="save-status"></span>
     </div>
   </div>
