@@ -432,5 +432,21 @@
   "languageChanged": {
     "message": "语言已切换",
     "description": "语言已切换"
+  },
+  "aboutDeveloper": {
+    "message": "关于开发者",
+    "description": "关于开发者"
+  },
+  "developerIntro": {
+    "message": "全栈开发者，专注于浏览器扩展和 Web 工具开发",
+    "description": "开发者介绍"
+  },
+  "projectRepo": {
+    "message": "项目仓库",
+    "description": "项目仓库"
+  },
+  "reportIssue": {
+    "message": "反馈问题",
+    "description": "反馈问题"
   }
 }

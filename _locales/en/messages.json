@@ -432,5 +432,21 @@
   "languageChanged": {
     "message": "Language changed",
     "description": "Language changed"
+  },
+  "aboutDeveloper": {
+    "message": "About Developer",
+    "description": "About developer"
+  },
+  "developerIntro": {
+    "message": "Full-stack developer, focused on browser extensions and web tools",
+    "description": "Developer intro"
+  },
+  "projectRepo": {
+    "message": "Project Repo",
+    "description": "Project repository"
+  },
+  "reportIssue": {
+    "message": "Report Issue",
+    "description": "Report issue"
   }
 }
